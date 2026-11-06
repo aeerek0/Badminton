@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>จับคู่ตีแบด</title>
+<title>Badminton</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f6f8;--card:#fff;--tx:#1b2430;--mu:#6b7683;--pr:#0f9d58;--pr2:#e6f5ec;--bd:#dde2e8;--dg:#d93025}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12171c;--card:#1b222a;--tx:#e8edf2;--mu:#8e9aa7;--pr:#34c477;--pr2:#16301f;--bd:#2a333d;--dg:#f28b82}}
@@ -47,7 +47,7 @@ try{var sv=localStorage.getItem('bdm');if(sv){S=Object.assign(S,JSON.parse(sv));
 S.rules=[{a:'อี๋',b:'ปลาย',t:'nopair'},{a:'หมู',b:'ปลาย',t:'never'}];
 if(!S.roster.length&&S.players.length)S.roster=S.players.slice();
 if(S.v!==2){S.court.price=100;S.court.fixed='';S.shuttle.price=58;S.v=2}
-if(!S.seeded){['ออม','ศีล','อาร์ม','พลัส','ออย','เจเจ','อั้ม','หมู','ปลาย','อี๋','คุณกร'].forEach(function(n){var k=function(s){return s.replace(/[\s\u0e48-\u0e4b]/g,'')};if(!S.roster.some(function(x){return k(x)===k(n)})){S.roster.push(n);S.off[n]=1}});S.seeded=1}
+if(!S.seeded){['ออม','ศีล','อาร์ม','พลัส','ออย','เจเจ','อั้ม','หมู','ปลาย','อี๋'].forEach(function(n){var k=function(s){return s.replace(/[\s\u0e48-\u0e4b]/g,'')};if(!S.roster.some(function(x){return k(x)===k(n)})){S.roster.push(n);S.off[n]=1}});S.seeded=1}
 function act(){return S.roster.filter(function(n){return!S.off[n]})}
 function toast(t){var d=document.getElementById('toast');if(!d){d=document.createElement('div');d.id='toast';d.style.cssText='position:fixed;left:12px;right:12px;bottom:80px;max-width:496px;margin:auto;background:#1b2430;color:#fff;padding:12px 14px;border-radius:12px;z-index:9;text-align:center';document.body.appendChild(d)}d.textContent=t;d.style.display='block';clearTimeout(d.t);d.t=setTimeout(function(){d.style.display='none'},3000)}
 var cf=0,cn=0;function clr(){if(!cf){cf=1;toast('กดล้างอีกครั้งเพื่อยืนยัน');setTimeout(function(){cf=0},3000);return}cf=0;S.rounds=[];S.paid={};save();render()}
